@@ -27,3 +27,6 @@ node_modules
 
 # Optional: OS-specific clutter
 Thumbs.db
+
+# Wrangler
+.wrangler
