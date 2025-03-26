@@ -1,4 +1,4 @@
-## Tic-Tac-Toe Multiplayer
+# Tic-Tac-Toe Multiplayer
 
 A fully responsive, browser-based Tic-Tac-Toe game built with vanilla JavaScript. Supports:
 
