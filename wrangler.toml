@@ -1,0 +1,20 @@
+name = "tic-tac-toe"
+main = "worker/index.mjs"
+compatibility_date = "2025-03-25"
+workers_dev = true
+
+[site]
+bucket = "./public"
+
+[durable_objects]
+bindings = [
+  { name = "GAME_ROOMS", class_name = "GameRoom" }
+]
+
+[[migrations]]
+tag = "v1"
+new_classes = ["GameRoom"]
+
+[[bindings]]
+type = "kv_namespace"
+name = "__STATIC_CONTENT"

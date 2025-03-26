@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multiplayer Tic-Tac-Toe - Play Online with Friends or AI</title>
+  <meta name="description" content="Play Tic-Tac-Toe in your browser with friends or against a smart AI. Supports real-time multiplayer, local 2-player, and mobile-friendly gameplay. No downloads or accounts needed.">  
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div id="top-bar">
+    <button id="dark-toggle" title="Toggle dark mode">🌙</button>
+  </div>
+
+  <h1>Tic-Tac-Toe</h1>
+
+  <div id="message">Loading...</div>
+
+  <div id="board"></div>
+
+  <div class="controls">
+    <button id="btn-ai">Play vs AI</button>
+    <button id="btn-local">2-Player Local</button>
+    <button id="btn-remote">Remote Game</button>
+  </div>
+
+  <div id="room-share-container" class="hidden">
+    <a href="#" id="toggle-room-share">🔽 Show Room Info</a>
+    <div id="room-share" class="hidden">
+      <input type="text" id="room-link" readonly />
+      <div style="margin-top: 8px;">
+        <button onclick="copyRoomLink()">Copy</button>
+        <button onclick="shareRoomLink()">Share</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="play-controls">
+    <button id="play-again" class="hidden">Play Again</button>
+    <button id="accept-rematch" class="hidden">Accept Rematch</button>
+  </div>
+
+  <div class="options">
+    <button id="fullscreen-toggle" class="mobile-only">📱 Full Screen</button>
+    <a href="#" id="help-toggle">❓ How to Play</a>
+  </div>
+
+  <div id="help" class="hidden">
+    <ul>
+      <li><strong>Play vs AI</strong>: Classic single-player mode against a computer.</li>
+      <li><strong>2-Player Local</strong>: Two players take turns on the same device.</li>
+      <li><strong>Remote Game</strong>: Share the link with a friend to play in real-time.</li>
+    </ul>
+  </div>
+
+  <script src="/app.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</body>
+</html>

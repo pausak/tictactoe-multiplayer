@@ -1,0 +1,195 @@
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f2f2f2;
+  color: #111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  transition: background 0.3s, color 0.3s;
+  position: relative;
+}
+
+body.dark-mode {
+  background: #121212;
+  color: #eee;
+}
+
+#top-bar {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 10;
+}
+
+#dark-toggle {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+body.dark-mode #dark-toggle {
+  color: #ff0;
+}
+
+h1 {
+  margin-top: 16px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  max-width: 400px;
+  width: 90vmin;
+  aspect-ratio: 1 / 1;
+  margin: 20px 0;
+}
+
+.cell {
+  background: #fff;
+  border: 2px solid #444;
+  font-size: clamp(2rem, 6vmin, 5rem);
+  text-align: center;
+  line-height: 1;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s;
+}
+
+body.dark-mode .cell {
+  background: #1e1e1e;
+  border-color: #888;
+  color: #eee;
+}
+
+.cell:hover {
+  background: #eee;
+}
+
+body.dark-mode .cell:hover {
+  background: #2a2a2a;
+}
+
+#message {
+  font-weight: bold;
+  margin-bottom: 12px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 6px;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+  background: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  min-width: 120px;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #f0f0f0;
+}
+
+.selected-mode {
+  background: #d1eaff;
+  border-color: #3399ff;
+}
+
+body.dark-mode button {
+  background: #1e1e1e;
+  border-color: #555;
+  color: #eee;
+}
+
+body.dark-mode button:hover {
+  background: #333;
+}
+
+#room-share-container {
+  margin-top: 12px;
+  text-align: center;
+}
+
+#room-share {
+  margin-top: 8px;
+}
+
+#room-link {
+  width: 90%;
+  padding: 8px;
+  font-size: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+#help {
+  max-width: 400px;
+  margin-top: 10px;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+body.dark-mode #help {
+  background: #1e1e1e;
+  border-color: #444;
+}
+
+#accept-rematch {
+  margin-top: 16px;
+}
+
+.controls,
+.play-controls,
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  #message {
+    font-size: 1rem;
+  }
+
+  button {
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    min-width: 100px;
+  }
+
+  #room-link {
+    font-size: 0.9rem;
+  }
+
+  .mobile-only {
+    display: inline-block;
+  }
+}
